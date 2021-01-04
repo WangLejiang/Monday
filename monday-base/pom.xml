@@ -7,8 +7,12 @@
     <groupId>com.wanglejiang</groupId>
     <artifactId>monday-base</artifactId>
     <version>1.0-SNAPSHOT</version>
-
     <packaging>pom</packaging>
+
+    <modules>
+        <module>monday-common</module>
+        <module>monday-common-service-provider</module>
+    </modules>
 
     <properties>
         <global.version>${project.version}</global.version>
@@ -17,8 +21,8 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <lombok.version>1.18.12</lombok.version>
-        <hutool.version>5.5.6</hutool.version>
+        <!-- module version -->
+        <monday.version>${project.version}</monday.version>
     </properties>
 
     <dependencyManagement>
@@ -26,12 +30,38 @@
             <dependency>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
+                <version>1.18.12</version>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
                 <artifactId>hutool-all</artifactId>
-                <version>${hutool.version}</version>
+                <version>5.5.6</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus</artifactId>
+                <version>3.4.1</version>
+            </dependency>
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>8.0.22</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>1.7.30</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.wanglejiang</groupId>
+                <artifactId>monday-common</artifactId>
+                <version>${monday.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.wanglejiang</groupId>
+                <artifactId>monday-common-service-provider</artifactId>
+                <version>${monday.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
